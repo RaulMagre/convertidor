@@ -1,6 +1,8 @@
 import Exchange2 from "/src/assets/Exchange2.png";
 import Heart from "/src/assets/Heart.png";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addConversion } from "../features/convertSlice";
 
 function Convert() {
   const [inputNum, setInputNum] = useState(0);
@@ -12,6 +14,8 @@ function Convert() {
   const [optionText4, setOptionText4] = useState("metres → ft");
   const [optionText5, setOptionText5] = useState("cm → inches");
   const [optionText6, setOptionText6] = useState("inches → cm");
+
+  const dispatch = useDispatch(); // Para guardar la conversión en Redux
 
   console.log("numero metido: " + inputNum);
   console.log("numero resutlado: " + resultNum);
@@ -97,89 +101,22 @@ function Convert() {
       setOptionText5("cm → inches");
       setOptionText6("inches → cm");
     }
-
-    // if (resultUnit === "miles") {
-    //   setOptionText1("miles → " + detectUnit(resultUnit));
-    //   setOptionText2("km → miles");
-    // } else if (resultUnit === "km") {
-    //   setOptionText1(resultUnit + " → " + detectUnit(resultUnit));
-    //   setOptionText2("miles → km");
-    // } else if (resultUnit === "metres") {
-    //   setOptionText3("metres → ft");
-    //   setOptionText4("ft → metres");
-    // } else if (resultUnit === "ft") {
-    //   setOptionText3("ft → metres");
-    //   setOptionText4("metres → ft");
-    // } else if (resultUnit === "inches") { 
-    //   setOptionText5("inches → cm");
-    //   setOptionText6("cm → inches");
-    // } else if (resultUnit === "cm") {
-    //   setOptionText5("cm → inches");
-    //   setOptionText6("inches → cm");
-    // }
-          
-    // setOptionText1(resultUnit + " → " + detectUnit(resultUnit));
-    // setOptionText2(resultUnit + " → " + detectUnit(resultUnit));
-    // setOptionText3(resultUnit + " → " + detectUnit(resultUnit));
-    // setOptionText4(resultUnit + " → " + detectUnit(resultUnit));
-    // setOptionText5(resultUnit + " → " + detectUnit(resultUnit));
-    // setOptionText6(resultUnit + " → " + detectUnit(resultUnit));
-
-    // switch  (setOptionText1) {
-    //   case "miles → km":
-    //     setOptionText1("km → miles");
-    //     break;
-    //   case "km → miles":
-    //     setOptionText1("miles → km");
-    //     break;
-    // }
-
-    // switch  (setOptionText2) {
-    //   case "km → miles":
-    //     setOptionText2("miles → km");
-    //     break;
-    //   case "miles → km":
-    //     setOptionText2("km → miles");
-    //     break;
-    // }
-
-    // switch  (setOptionText3) {
-    //   case "metres → ft":
-    //     setOptionText3("ft → metres");
-    //     break;
-    //   case "ft → metres":
-    //     setOptionText3("metres → ft");
-    //     break;
-    // }
-
-    // switch  (setOptionText4) {
-    //   case "ft → metres":
-    //     setOptionText4("metres → ft");
-    //     break;
-    //   case "metres → ft":
-    //     setOptionText4("ft → metres");
-    //     break;
-    // }
-
-    // switch  (setOptionText5) {
-    //   case "inches → cm":
-    //     setOptionText5("cm → inches");
-    //     break;
-    //   case "cm → inches":
-    //     setOptionText5("inches → cm");
-    //     break;
-    // }
-
-    // switch  (setOptionText6) {
-    //   case "cm → inches":
-    //     setOptionText6("inches → cm");
-    //     break;
-    //   case "inches → cm":
-    //     setOptionText6("cm → inches");
-    //     break;
-    // }
   }
 
+  // Para que se guarde la conversión en Redux
+  function saveConversion() {
+    dispatch(
+      addConversion({
+        inputNum: inputNum,
+        resultNum: resultNum,
+        resultUnit: resultUnit,
+        inputUnit: detectUnit(resultUnit),
+      }),
+      setInputNum(0),
+      setResultNum(0.00)
+    );
+  }
+                    
   return (
     <div className="Convert">
       <h2 className="Convert-text">convert</h2>
@@ -204,12 +141,14 @@ function Convert() {
             type="number"
             onChange={handleInputNumChange}
             placeholder="value"
-            value={inputNum}
+            value={inputNum}  
           ></input>
         </div>
       </div>
       <div className="heart">
-        <img src={Heart} height={24} width={24} alt="fav" />
+        <button className="heart-button" onClick={saveConversion}>
+          <img src={Heart} height={24} width={24} alt="fav" />
+        </button>
       </div>
       <div className="result">
         <p className="number">{resultNum}</p>

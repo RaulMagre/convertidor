@@ -27,28 +27,6 @@
   color: #2e0039;
 }
 
-/* Media Query para móviles */
-@media (max-width: 720px) {
-  .Header {
-    width: 390;
-    height: 48;
-  }
-  .Header-text {
-    width: 156;
-    height: 31;
-    position: fixed;
-    top: 9px;
-    left: 54px;
-  }
-  .exchange {
-    width: 32px;
-    height: 32px;
-    position: fixed;
-    top: 11px;
-    left: 10px;
-  }
-}
-
 .Convert {
   width: 714px;
   height: 193px;
@@ -169,6 +147,17 @@
   left: 567px;
 }
 
+.heart-button {
+  all: unset;
+  cursor: pointer;
+}
+
+.heart-button:hover {
+  transform: scale(1.1);
+  background: #d0318e36;
+  border-radius: 40%;
+}
+
 .result {
   width: 190px;
   height: 38px;
@@ -206,7 +195,6 @@
   position: fixed;
   top: 378px;
   left: 529px;
-  font-family: Poppins;
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
@@ -214,25 +202,361 @@
   color: #676767;
 }
 
-.Caja {
+.Caja-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+.Caja-list li {
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0%;
+  line-height: 0px;
+  color: #676767;
+  width: 50%;
+  box-sizing: border-box;
+  padding-top: 17px;
+}
+
+.Caja-text {
+  width: 349px;
+  height: 38px;
+  background: #e3e3e3;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.caja-0 {
   width: 349px;
   height: 38px;
   position: fixed;
   top: 426px;
   left: 529px;
-  border-radius: 10px;
-  background: #e3e3e3;
 }
 
-.Caja-text {
-  width: 144px;
-  height: 23px;
+.caja-1 {
+  width: 349px;
+  height: 38px;
+  position: fixed;
+  top: 426px;
+  left: 894px;
+}
+
+.caja-2 {
+  width: 349px;
+  height: 38px;
+  position: fixed;
+  top: 485px;
+  left: 529px;
+}
+
+.caja-3 {
+  width: 349px;
+  height: 38px;
+  position: fixed;
+  top: 485px;
+  left: 894px;
+}
+
+.caja-4 {
+  width: 349px;
+  height: 38px;
+  position: fixed;
+  top: 545px;
+  left: 529px;
+}
+
+.caja-5 {
+  width: 349px;
+  height: 38px;
+  position: fixed;
+  top: 545px;
+  left: 894px;
+}
+
+.caja-6 {
+  width: 349px;
+  height: 38px;
+  position: fixed;
+  top: 608px;
+  left: 529px;
+}
+
+.caja-7 {
+  width: 349px;
+  height: 38px;
+  position: fixed;
+  top: 608px;
+  left: 894px;
+}
+
+.text-0 {
   position: fixed;
   top: 434px;
   left: 547px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 0px;
-  letter-spacing: 0%;
-  color: #676767;
+}
+
+.text-1 {
+  position: fixed;
+  top: 434px;
+  left: 912px;
+}
+
+.text-2 {
+  position: fixed;
+  top: 493px;
+  left: 547px;
+}
+
+.text-3 {
+  position: fixed;
+  top: 493px;
+  left: 912px;
+}
+
+.text-4 {
+  position: fixed;
+  top: 553px;
+  left: 547px;
+}
+
+.text-5 {
+  position: fixed;
+  top: 553px;
+  left: 912px;
+}
+
+.text-6 {
+  position: fixed;
+  top: 612px;
+  left: 547px;
+}
+
+.text-7 {
+  position: fixed;
+  top: 612px;
+  left: 912px;
+}
+
+.cross-0 {
+  position: fixed;
+  top: 430px;
+  left: 850px;
+}
+
+.cross-1 {
+  position: fixed;
+  top: 430px;
+  left: 1215px;
+}
+
+.cross-2 {
+  position: fixed;
+  top: 492px;
+  left: 850px;
+}
+
+.cross-3 {
+  position: fixed;
+  top: 492px;
+  left: 1215px;
+}
+
+.cross-4 {
+  position: fixed;
+  top: 552px;
+  left: 850px;
+}
+
+.cross-5 {
+  position: fixed;
+  top: 552px;
+  left: 1215px;
+}
+
+.cross-6 {
+  position: fixed;
+  top: 611px;
+  left: 850px;
+}
+
+.cross-7 {
+  position: fixed;
+  top: 611px;
+  left: 1215px;
+}
+
+.cross-button {
+  all: unset;
+  cursor: pointer;
+}
+
+/* Media query para ajustar al tamaño de móviles */
+@media (max-width: 720px) {
+  .Header {
+    width: 390;
+    height: 48;
+  }
+  .Header-text {
+    width: 156;
+    height: 31;
+    position: fixed;
+    top: 9px;
+    left: 54px;
+  }
+  .exchange {
+    width: 32px;
+    height: 32px;
+    position: fixed;
+    top: 11px;
+    left: 10px;
+  }
+
+  .Convert {
+    width: 349px;
+    height: 209px;
+    position: fixed;
+    top: 71px;
+    left: 21px;
+  }
+
+  .Convert-text {
+    position: fixed;
+    top: 82px;
+    left: 42px;
+  }
+
+  .select {
+    position: fixed;
+    top: 131px;
+    left: 42px;
+  }
+
+  .exchange2 {
+    position: fixed;
+    top: 138px;
+    left: 272px;
+  }
+
+  .input-container {
+    position: fixed;
+    top: 182px;
+    left: 42px;
+  }
+
+  .input-unit {
+    position: fixed;
+    top: 182px;
+    left: 276px;
+  }
+
+  .input-text {
+    position: fixed;
+    top: 182px;
+    left: 241px;
+  }
+
+  .heart {
+    position: fixed;
+    top: 229px;
+    left: 39px;
+  }
+
+  .number {
+    position: fixed;
+    top: 223px;
+    left: 202px;
+  }
+
+  .unit {
+    position: fixed;
+    top: 231px;
+    left: 275px;
+  }
+
+  .Saved-text {
+    position: fixed;
+    top: 323px;
+    left: 21px;
+  }
+
+  .Caja-list {
+    display: flex;
+    flex: content;
+    
+  }
+
+  .caja-0 {
+    position: fixed;
+    top: 362px;
+    left: 21px;
+  }
+
+  .caja-1 {
+    position: fixed;
+    top: 421px;
+    left: 21px;
+  }
+
+  .caja-2 {
+    position: fixed;
+    top: 479px;
+    left: 21px;
+  }
+
+  .caja-3 {
+    position: fixed;
+    top: 537px;
+    left: 21px;
+  }
+
+  .text-0 {
+    position: fixed;
+    top: 371px;
+    left: 39px;
+  }
+
+  .text-1 {
+    position: fixed;
+    top: 429px;
+    left: 39px;
+  }
+
+  .text-2 {
+    position: fixed;
+    top: 487px;
+    left: 39px;
+  }
+
+  .text-3 {
+    position: fixed;
+    top: 545px;
+    left: 39px;
+  }
+
+  .cross-0 {
+    position: fixed;
+    top: 370px;
+    left: 342px;
+  }
+
+  .cross-1 {
+    position: fixed;
+    top: 428px;
+    left: 342px;
+  }
+
+  .cross-2 {
+    position: fixed;
+    top: 486px;
+    left: 342px;
+  }
+
+  .cross-3 {
+    position: fixed;
+    top: 544px;
+    left: 342px;
+  }
 }
