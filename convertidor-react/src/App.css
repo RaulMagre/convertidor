@@ -141,7 +141,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 0px;
-  letter-spacing: 0%;  
+  letter-spacing: 0%;
 }
 
 .input-text {
@@ -149,7 +149,7 @@
   height: 17px;
   position: fixed;
   top: 187px;
-  left: 1072px;  
+  left: 1072px;
   background: none;
   border: none;
   outline: none;
@@ -198,4 +198,41 @@
   font-size: 16px;
   line-height: 0px;
   letter-spacing: 0%;
+}
+
+.Saved-text {
+  width: 188px;
+  height: 26px;
+  position: fixed;
+  top: 378px;
+  left: 529px;
+  font-family: Poppins;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  color: #676767;
+}
+
+.Caja {
+  width: 349px;
+  height: 38px;
+  position: fixed;
+  top: 426px;
+  left: 529px;
+  border-radius: 10px;
+  background: #e3e3e3;
+}
+
+.Caja-text {
+  width: 144px;
+  height: 23px;
+  position: fixed;
+  top: 434px;
+  left: 547px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 0px;
+  letter-spacing: 0%;
+  color: #676767;
 }

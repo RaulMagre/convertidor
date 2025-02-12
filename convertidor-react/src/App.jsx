@@ -1,6 +1,7 @@
 import "./App.css";
 import Convert from "./components/Convert";
 import Header from "./components/Header";
+import Saved from "./components/Saved";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <div>
           <Header />
           <Convert />
+          <Saved />
         </div>
       </div>
     </>
