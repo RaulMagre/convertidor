@@ -3,6 +3,10 @@
 }
 
 .container {
-  max-width: 1728px;
+  max-width: 1920px;
   min-width: 320px;
 } 
+
+body {
+  margin: 0;
+}

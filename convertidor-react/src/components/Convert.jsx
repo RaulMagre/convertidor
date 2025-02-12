@@ -105,6 +105,7 @@ function Convert() {
 
   // Para que se guarde la conversión en Redux
   function saveConversion() {
+    
     dispatch(
       addConversion({
         inputNum: inputNum,
